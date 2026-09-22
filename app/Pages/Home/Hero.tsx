@@ -85,7 +85,7 @@ const Hero = () => {
             </div>
           </div>
           {/* <!-- Node Blueprint Map --> */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             {/* <!-- Node 1: Edge & Client Layer --> */}
             <div className="bg-[#080D0E]/90 border border-border-tech rounded-md p-5 text-left relative flex flex-col justify-between group hover:border-primary/50 transition-colors">
               <div>
@@ -190,7 +190,7 @@ const Hero = () => {
             </div>
           </div>
           {/* <!-- Telemetry Data Strip --> */}
-          <div className="mt-6 pt-5 border-t border-border-tech grid grid-cols-2 md:grid-cols-4 gap-4 text-left font-mono">
+          <div className="mt-6 pt-5 border-t border-border-tech grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left font-mono">
             <div className="p-3 bg-[#080D0E]/60 border border-border-tech/60 rounded flex flex-col justify-between">
               <span className="text-[10px] uppercase text-text-dim flex items-center justify-between mb-1">
                 PERFORMANCE

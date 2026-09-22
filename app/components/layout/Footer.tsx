@@ -1,35 +1,39 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import Image from "next/image";
 import { SITE_NAME, SERVICES } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border-tech py-16 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+    <footer className="bg-[#080D0E] border-t border-border-tech py-12 sm:py-16 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-12 mb-12">
         {/* Brand Info */}
-        <div className="md:col-span-5">
-          <a className="inline-block mb-6" href="#">
-            <img
+        <div className="sm:col-span-2 md:col-span-5 space-y-4">
+          <Link className="inline-block" href="/">
+            <Image
               alt="L.B.D Digital Hub"
-              className="h-7 w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeSO3b3UIKoM5A0ShZBISqFnIyufchX_PK4z1tBww4yK245Su557ZbOSPJGmC0ROM9AhsrT-2c7cPMZ77RrCX6xBE0J5KLKbGcp62K8PAu2IVhNfe4dT6AKbBw3P3ku7Nq7Map86HHwCAChYIyLtiREUcxaRoIIKIJyGjYoN9cnMg0Xibw-xXAYU_hdrc9XuTP-dIrT9XGfM9Khq9A2ktON27a1RI0dDfwAnQSjfkfYXB7jZmM3yHdpA7cYS3wENN1pA"
+              className="h-8 w-auto object-contain"
+              src="/logo.png"
+              width={120}
+              height={36}
             />
-          </a>
-          <p className="text-text-muted text-sm max-w-sm mb-6 leading-relaxed">
-            Architecting high-performance web platforms, mobile solutions, and
-            AI automation workflows with engineering rigor and design clarity.
+          </Link>
+          <p className="text-text-muted text-sm max-w-sm leading-relaxed font-light">
+            Engineering high-performance web platforms, mobile apps, and
+            intelligent AI automation workflows that help businesses scale
+            reliably.
           </p>
-          <div className="flex items-center gap-2 font-mono text-xs text-text-muted">
+          <div className="flex items-center gap-2 font-mono text-xs text-text-muted pt-2">
             <span className="text-primary font-bold">&gt;</span> Built with
             modern composable primitives.
           </div>
         </div>
 
-        <div className="md:col-span-2">
-          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white mb-4">
+        {/* Capabilities */}
+        <div className="md:col-span-2 space-y-3">
+          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white font-semibold">
             CAPABILITIES
           </h4>
-          <ul className="space-y-2.5 text-sm text-text-muted">
+          <ul className="space-y-2 text-sm text-text-muted font-light">
             {SERVICES.slice(0, 4).map((service) => (
               <li key={service.href}>
                 <Link
@@ -43,74 +47,77 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="md:col-span-2">
-          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white mb-4">
+        {/* Company */}
+        <div className="md:col-span-2 space-y-3">
+          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white font-semibold">
             COMPANY
           </h4>
-          <ul className="space-y-2.5 text-sm text-text-muted">
-            <li className="">
+          <ul className="space-y-2 text-sm text-text-muted font-light">
+            <li>
               <Link
                 className="hover:text-primary transition-colors"
                 href="/projects"
               >
-                Projects
+                Selected Works
               </Link>
             </li>
-            <li className="">
+            <li>
               <Link
                 className="hover:text-primary transition-colors"
-                href="/about"
+                href="/services"
               >
-                About
+                Our Services
               </Link>
             </li>
-            <li className="">
-              <Link
+            <li>
+              <a
                 className="hover:text-primary transition-colors"
-                href="/blogs"
+                href="/#process"
               >
-                Blogs
-              </Link>
+                Development Process
+              </a>
             </li>
-            <li className="">
-              <Link
+            <li>
+              <a
                 className="hover:text-primary transition-colors"
-                href="/contact"
+                href="mailto:contact@lbddigitalhub.com"
               >
-                Client Scoping
-              </Link>
+                Contact Team
+              </a>
             </li>
           </ul>
         </div>
 
-        <div className="md:col-span-3">
-          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white mb-4">
-            GOVERNANCE
+        {/* Practice Areas */}
+        <div className="md:col-span-3 space-y-3">
+          <h4 className="font-mono text-xs uppercase tracking-wider text-text-white font-semibold">
+            CONNECT
           </h4>
-          <ul className="space-y-2.5 text-sm text-text-muted">
-            <li className="">
-              <Link className="hover:text-primary transition-colors" href="#">
-                Privacy Policy
-              </Link>
+          <ul className="space-y-2 text-sm text-text-muted font-light">
+            <li>
+              <a
+                className="hover:text-primary transition-colors"
+                href="mailto:contact@lbddigitalhub.com"
+              >
+                contact@lbddigitalhub.com
+              </a>
             </li>
-            <li className="">
-              <Link className="hover:text-primary transition-colors" href="#">
-                Terms of Service
-              </Link>
+            <li className="text-xs text-text-dim pt-1 font-mono">
+              Remote First • Worldwide Client Delivery
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-border-tech flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-text-muted">
-        <p className="">
-          © {new Date().getFullYear()} {SITE_NAME}. Precision in Digital
-          Architecture.
+      {/* Bottom Footer Bar */}
+      <div className="max-w-7xl mx-auto pt-8 border-t border-border-tech flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-text-muted text-center sm:text-left">
+        <p>
+          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
         </p>
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-text-white">
-            System Status: <span className="text-primary">Operational</span>
+            System Status: <span className="text-primary font-semibold">Operational</span>
           </span>
         </div>
       </div>

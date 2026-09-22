@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { projects, type Project } from "@/data/projects";
 import {
   ArrowRight,
+  ExternalLink,
   Cpu,
   Globe,
   Gamepad2,
@@ -161,7 +163,7 @@ const ProjectGrid = () => {
                   </div>
 
                   {/* 3 Metric / Impact Highlights */}
-                  <div className="grid grid-cols-3 gap-2 text-center text-[10px]">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-[10px]">
                     {(project.measuredImpact?.slice(0, 3) || []).map(
                       (impact, idx) => (
                         <div
@@ -188,7 +190,7 @@ const ProjectGrid = () => {
                   </div>
 
                   {/* Footer summary stats */}
-                  <div className="flex justify-between items-center text-[10px] pt-1 text-[#8A999A]">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] pt-1 text-[#8A999A] gap-1">
                     <span>
                       TIMELINE: {project.stats?.timeline || "Completed"}
                     </span>
@@ -217,7 +219,9 @@ const ProjectGrid = () => {
                 </div>
 
                 <h3 className="font-heading text-2xl font-bold text-white mb-2 group-hover:text-[#12C887] transition-colors leading-snug">
-                  {project.title}
+                  <Link href={`/projects/${project.slug}`} className="hover:underline">
+                    {project.title}
+                  </Link>
                 </h3>
                 {project.subtitle && (
                   <p className="text-xs font-mono-code text-[#8A999A] mb-4 uppercase tracking-wider">
@@ -243,7 +247,7 @@ const ProjectGrid = () => {
             </div>
 
             {/* Card Footer with Result Metric and Spec Link */}
-            <div className="px-7 py-4 bg-[#0B1011] border-t border-[#1B2727] flex items-center justify-between">
+            <div className="px-7 py-4 bg-[#0B1011] border-t border-[#1B2727] flex flex-wrap items-center justify-between gap-3">
               <div className="font-mono-code text-xs text-[#8A999A]">
                 KEY IMPACT:{" "}
                 <span className="text-[#12C887] font-semibold">
@@ -251,15 +255,27 @@ const ProjectGrid = () => {
                   {project.measuredImpact?.[0]?.label}
                 </span>
               </div>
-              <a
-                className="inline-flex items-center gap-1.5 font-mono-code text-xs text-[#12C887] hover:underline uppercase tracking-wider font-semibold group/link"
-                href={project.projectUrl || `/projects/${project.slug}`}
-                target={project.projectUrl ? "_blank" : "_self"}
-                rel={project.projectUrl ? "noopener noreferrer" : undefined}
-              >
-                <span>Explore Project</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-              </a>
+              <div className="flex items-center gap-3">
+                {project.projectUrl && (
+                  <a
+                    className="inline-flex items-center gap-1 font-mono-code text-xs text-[#8A999A] hover:text-white hover:underline transition-colors"
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Open live app for ${project.title}`}
+                  >
+                    <span>Live App</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+                <Link
+                  className="inline-flex items-center gap-1.5 font-mono-code text-xs text-[#12C887] hover:underline uppercase tracking-wider font-semibold group/link"
+                  href={`/projects/${project.slug}`}
+                >
+                  <span>Case Study</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                </Link>
+              </div>
             </div>
           </article>
         ))}

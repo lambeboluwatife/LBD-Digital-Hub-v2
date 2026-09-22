@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     ],
     qualities: [75, 80],
   },
+  experimental: {
+    cpus: 2,
+  },
 };
 
 export default nextConfig;
