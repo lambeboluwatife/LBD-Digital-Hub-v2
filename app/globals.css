@@ -1,26 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080d0e;
+  --foreground: #f5f7f7;
+  --surface: #101718;
+  --surface-low: #0c1213;
+  --surface-card: #101718;
+  --surface-container: #141d1e;
+  --surface-container-high: #192425;
+  --surface-container-lowest: #050809;
+  --border-tech: #1b2727;
+  --border-tech-light: rgba(27, 39, 39, 0.8);
+  --border-dark: #1b2727;
+  --border-light: #283939;
+  --outline-variant: #1b2727;
+  --primary: #12c887;
+  --primary-hover: #18d6a0;
+  --on-primary: #080d0e;
+  --on-background: #f5f7f7;
+  --on-surface: #f5f7f7;
+  --on-surface-variant: #a7b0b0;
+  --on-surface-muted: #8a999a;
+  --primary-glow: rgba(18, 200, 135, 0.15);
+  --text-white: #f5f7f7;
+  --text-muted: #a7b0b0;
+  --text-dim: #6e7a7a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-background: #080d0e;
+  --color-foreground: #f5f7f7;
+  --color-surface: #101718;
+  --color-surface-low: #0c1213;
+  --color-surface-card: #101718;
+  --color-surface-container: #141d1e;
+  --color-surface-container-high: #192425;
+  --color-surface-container-lowest: #050809;
+  --color-border: #1b2727;
+  --color-border-tech: #1b2727;
+  --color-border-tech-light: rgba(27, 39, 39, 0.8);
+  --color-border-dark: #1b2727;
+  --color-border-light: #283939;
+  --color-outline-variant: #1b2727;
+  --color-primary: #12c887;
+  --color-primary-hover: #18d6a0;
+  --color-primary-glow: rgba(18, 200, 135, 0.15);
+  --color-on-primary: #080d0e;
+  --color-on-background: #f5f7f7;
+  --color-on-surface: #f5f7f7;
+  --color-on-surface-variant: #a7b0b0;
+  --color-on-surface-muted: #8a999a;
+  --color-text-white: #f5f7f7;
+  --color-text-muted: #a7b0b0;
+  --color-text-dim: #6e7a7a;
+
+  /* Aliases for convenience */
+  --color-muted: #a7b0b0;
+  --color-dim: #6e7a7a;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 20px;
+  --spacing-section-gap: 140px;
+  --spacing-container-max: 1280px;
+  --container-container-max: 1280px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Body Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080d0e;
+  color: #f5f7f7;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: rgba(18, 200, 135, 0.2);
+  color: #12c887;
+}
+
+/* Blueprint Grid Background Utilities */
+.blueprint-grid {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(27, 39, 39, 0.45) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(27, 39, 39, 0.45) 1px,
+      transparent 1px
+    );
+}
+
+.blueprint-grid-dense {
+  background-size: 16px 16px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(18, 200, 135, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(18, 200, 135, 0.05) 1px,
+      transparent 1px
+    );
+}
+
+/* Architecture & Grid Pattern Utilities */
+.arch-card {
+  background-color: #101718;
+  border: 1px solid #1b2727;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-card:hover {
+  border-color: #18d6a0;
+  box-shadow: 0 0 24px -6px rgba(18, 200, 135, 0.12);
+}
+
+.grid-pattern {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(27, 39, 39, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 39, 39, 0.4) 1px, transparent 1px);
+}
+
+.tech-grid-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(18, 200, 135, 0.08) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+.tech-bracket {
+  position: relative;
+}
+
+.tech-bracket::before {
+  content: "[";
+  color: #12c887;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.tech-bracket::after {
+  content: "]";
+  color: #12c887;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+}
+
+.font-display,
+.font-heading {
+  font-family: var(--font-heading, "Space Grotesk", sans-serif);
+}
+
+.border-subtle {
+  border: 1px solid #1b2727;
+}
+
+.max-w-container-max {
+  max-width: 1280px;
+}
+
+/* Typography Helper */
+.font-body-md {
+  font-family: var(--font-body, "Inter", sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
 }
