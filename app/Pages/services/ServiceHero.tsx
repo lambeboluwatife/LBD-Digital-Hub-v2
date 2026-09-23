@@ -18,12 +18,13 @@ const ServiceHero = () => {
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-border-dark bg-surface font-mono text-xs tracking-wider text-primary mb-8">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
           <span className="uppercase">
-            Architectural Engineering Positioning
+            Our Core Capabilities
           </span>
         </div>
         <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-on-surface mb-6 leading-[1.08]">
           Architecting the future of
           <span className="text-primary font-semibold">
+            {" "}
             Digital Performance.
           </span>
         </h1>
@@ -38,11 +39,11 @@ const ServiceHero = () => {
           </span>
           <span className="text-border-light">•</span>
           <span className="flex items-center gap-1.5">
-            <span className="text-primary">▸</span> Agentic Orchestration
+            <span className="text-primary">▸</span> AI Automation
           </span>
           <span className="text-border-light">•</span>
           <span className="flex items-center gap-1.5">
-            <span className="text-primary">▸</span> Microsecond Latency
+            <span className="text-primary">▸</span> High Performance
           </span>
         </div>
       </div>
@@ -261,12 +262,10 @@ const ServiceHero = () => {
               </span>
             </div>
             <h3 className="font-heading text-xl font-bold text-on-surface mb-3">
-              UI/UX Systems Engineering
+              UI/UX Design &amp; Prototyping
             </h3>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
-              Component token architectures, systematic design graphs, and
-              accessibility-first user workflows configured for developer
-              velocity.
+              Intuitive user interfaces, accessible design systems, and responsive user workflows tailored to your target audience.
             </p>
           </div>
           <div className="p-3.5 bg-surface-container rounded border border-border-dark flex items-center gap-3">
@@ -275,10 +274,10 @@ const ServiceHero = () => {
             </div>
             <div>
               <div className="text-xs font-semibold text-on-surface font-mono">
-                Atomic Token Systems
+                Modern Design Systems
               </div>
               <div className="text-[11px] text-on-surface-variant font-mono">
-                Zero-drift Figma to Tailwind pipelines
+                Pixel-perfect implementation from design to code
               </div>
             </div>
           </div>

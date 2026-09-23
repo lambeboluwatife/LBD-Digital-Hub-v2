@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import ProjectGallery from "@/components/projects/ProjectGallery";
 import {
   ArrowLeft,
   ArrowRight,
@@ -29,20 +30,51 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Case Study Not Found | LBD Digital Hub",
+      title: "Case Study Not Found",
     };
   }
+
+  const projectKeywords = [
+    project.title,
+    ...(project.tags || []),
+    ...(project.badges || []),
+    "case study",
+    "digital engineering",
+    "software architecture",
+    "LBD Digital Hub",
+  ];
+
+  const ogImage = project.src || "/og-image.jpg";
 
   return {
     title: `${project.title} — Case Study`,
     description: project.subtitle || project.solution,
+    keywords: projectKeywords,
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
     openGraph: {
       title: `${project.title} — Case Study | LBD Digital Hub`,
       description: project.subtitle || project.solution,
-      url: `https://lbddigitalhub.com/projects/${project.slug}`,
+      url: `/projects/${project.slug}`,
+      siteName: "LBD Digital Hub",
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: project.alt || `${project.title} Case Study Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Case Study | LBD Digital Hub`,
+      description: project.subtitle || project.solution,
+      images: [ogImage],
+      creator: "@danibholie",
+      site: "@danibholie",
     },
   };
 }
@@ -112,6 +144,13 @@ export default async function CaseStudyPage({
             ))}
           </div>
         </header>
+
+        {/* Visual Showcase (Supports 1, 2, or any number of images) */}
+        <ProjectGallery
+          title={project.title}
+          images={project.images || (project.src ? [project.src] : [])}
+          projectUrl={project.projectUrl}
+        />
 
         {/* Project Stats Quick Bar */}
         {project.stats && (

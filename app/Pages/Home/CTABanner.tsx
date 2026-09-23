@@ -20,20 +20,20 @@ const CTABanner = () => {
               workflows.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <Link
                 className="w-full sm:w-auto bg-primary text-[#080D0E] font-semibold text-base px-8 py-3.5 rounded-md hover:bg-primary-hover transition-all text-center inline-flex items-center justify-center gap-2"
-                href="mailto:contact@lbddigitalhub.com"
+                href="/contact"
               >
                 <span>Start a Project</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
+              </Link>
+              <Link
                 className="w-full sm:w-auto bg-[#080D0E] text-[#F5F7F7] border border-border-tech hover:border-primary/50 text-base font-medium px-8 py-3.5 rounded-md transition-all text-center inline-flex items-center justify-center gap-2"
-                href="#contact"
+                href="/contact"
               >
                 <Calendar className="w-4 h-4 text-primary" />
                 <span>Book a Strategy Call</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

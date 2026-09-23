@@ -1,3 +1,10 @@
+export interface ProjectImage {
+  src: string;
+  alt?: string;
+  title?: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -5,6 +12,12 @@ export interface Project {
   tags: string[];
   alt: string;
   src: string;
+  /**
+   * Multi-image showcase array.
+   * Can hold any number of image URLs or ProjectImage objects.
+   * Additional images can easily be added to this array at any time.
+   */
+  images?: (string | ProjectImage)[];
   challenge: string;
   solution: string;
 
@@ -53,7 +66,19 @@ export const projects: Project[] = [
     category: ["web", "game"],
     tags: ["Svelte.js", "TypeScript", "Node.js", "Express", "MongoDB", "Cloud Database"],
     alt: "GKAI multiplayer strategy game dashboard with modern interactive interface.",
-    src: "/images/GKAI-bg.webp",
+    src: "/images/projects/gkai-1.jpg",
+    images: [
+      {
+        src: "/images/projects/gkai-1.jpg",
+        title: "GKAI Live Multiplayer Arena",
+        caption: "Real-time game dashboard with active player lobby and number guessing matrix.",
+      },
+      {
+        src: "/images/projects/gkai-2.jpg",
+        title: "GKAI Competitive Match Results",
+        caption: "Detailed post-match score distribution, round history graphs, and ranking badges.",
+      },
+    ],
 
     challenge:
       "Building a fast, engaging multiplayer strategy game that saves player progress seamlessly and runs without lag across all devices.",
@@ -183,7 +208,19 @@ export const projects: Project[] = [
       "TypeScript",
     ],
     alt: "Digital Readiness mobile platform featuring AI-powered digital literacy assessments, conversational agents, personalized readiness reports, and intuitive mobile-first interfaces.",
-    src: "/projects/digital-readiness/cover.webp",
+    src: "/images/projects/digital-readiness-1.jpg",
+    images: [
+      {
+        src: "/images/projects/digital-readiness-1.jpg",
+        title: "AI Conversational Assessment",
+        caption: "Guided adaptive interview evaluating user skills in natural dialogue.",
+      },
+      {
+        src: "/images/projects/digital-readiness-2.jpg",
+        title: "Organizational Readiness Analytics",
+        caption: "Comprehensive performance score, department benchmarks, and competency breakdown.",
+      },
+    ],
 
     challenge:
       "Organizations lacked a friendly, scalable way to evaluate people's practical digital skills, as traditional paper surveys are rigid and confusing for everyday users.",
@@ -326,7 +363,19 @@ export const projects: Project[] = [
       "SEO Ready",
     ],
     alt: "Deduction football intelligence platform featuring player scouting reports, match performance analytics, advanced search, editorial articles, and interactive player statistics.",
-    src: "/images/deduction-bg.webp",
+    src: "/images/projects/deduction-1.jpg",
+    images: [
+      {
+        src: "/images/projects/deduction-1.jpg",
+        title: "Scouting & Player Performance Hub",
+        caption: "In-depth player profile, pitch radar map, and match performance metrics.",
+      },
+      {
+        src: "/images/projects/deduction-2.jpg",
+        title: "Tactical & Passing Network Analysis",
+        caption: "Interactive tactical line-ups, team comparison matrix, and passing network topology.",
+      },
+    ],
 
     challenge:
       "Creating a fast media and scouting platform capable of publishing daily football stories while managing detailed player statistics, instant search, and interactive charts.",
@@ -469,7 +518,19 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     alt: "ClientPulse SaaS dashboard showing project timelines, client updates, public project sharing, and freelancer workflow management.",
-    src: "/images/client-pulse-bg.webp",
+    src: "/images/projects/client-pulse-1.jpg",
+    images: [
+      {
+        src: "/images/projects/client-pulse-1.jpg",
+        title: "Client Portal & Timeline",
+        caption: "Interactive milestone tracker with deliverable approvals and shareable client links.",
+      },
+      {
+        src: "/images/projects/client-pulse-2.jpg",
+        title: "Communications & Activity Feed",
+        caption: "Real-time client messaging feed and milestone sign-off verification cards.",
+      },
+    ],
 
     challenge:
       "Freelancers and agencies spend too much time repeating project updates across WhatsApp, email, and texts, leading to miscommunication and frustrated clients.",
@@ -612,7 +673,19 @@ export const projects: Project[] = [
       "SEO Ready",
     ],
     alt: "Premium corporate website showcasing luxury branding projects, interactive case studies, and immersive visual storytelling for Olan & Johnson.",
-    src: "/images/olan-bg.webp",
+    src: "/images/projects/olan-1.jpg",
+    images: [
+      {
+        src: "/images/projects/olan-1.jpg",
+        title: "Olan & Johnson Architectural Showcase",
+        caption: "Editorial portfolio highlighting luxury residential and commercial design works.",
+      },
+      {
+        src: "/images/projects/olan-2.jpg",
+        title: "Brand Identity & Design System",
+        caption: "Corporate identity guidelines, typography scale, and architectural photography collage.",
+      },
+    ],
 
     challenge:
       "Creating a prestigious corporate website that reflects the high quality of Olan & Johnson's luxury branding work while making it easy for prospective clients to explore completed projects.",

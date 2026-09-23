@@ -16,18 +16,18 @@ const ServiceCTA = () => {
           team and receive a comprehensive system roadmap.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a
+          <Link
             className="w-full sm:w-auto bg-primary text-on-primary px-8 py-3.5 rounded font-semibold text-sm hover:bg-primary-hover active:scale-95 transition-all shadow-sm"
-            href="#contact"
+            href="/contact"
           >
             Start a Project
-          </a>
-          <a
+          </Link>
+          <Link
             className="w-full sm:w-auto border border-border-dark bg-surface-container text-on-surface px-8 py-3.5 rounded font-mono text-xs uppercase tracking-wider hover:border-primary/40 transition-all"
-            href="#book"
+            href="/contact"
           >
             Book Technical Call
-          </a>
+          </Link>
         </div>
       </div>
     </section>

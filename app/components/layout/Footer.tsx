@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_NAME, SERVICES } from "@/lib/constants";
+import { Mail } from "lucide-react";
+import { TwitterXIcon, GithubIcon, LinkedinIcon } from "@/app/components/ui/SocialIcons";
 
 export default function Footer() {
   return (
@@ -18,13 +20,45 @@ export default function Footer() {
             />
           </Link>
           <p className="text-text-muted text-sm max-w-sm leading-relaxed font-light">
-            Engineering high-performance web platforms, mobile apps, and
+            Engineering high-performance web platforms, modern mobile apps, and
             intelligent AI automation workflows that help businesses scale
             reliably.
           </p>
-          <div className="flex items-center gap-2 font-mono text-xs text-text-muted pt-2">
-            <span className="text-primary font-bold">&gt;</span> Built with
-            modern composable primitives.
+          <div className="flex items-center gap-3 pt-2">
+            <a
+              href="https://twitter.com/danibholie"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter / X profile"
+              className="w-8 h-8 rounded bg-[#101718] border border-[#1B2727] flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/50 transition-colors"
+            >
+              <TwitterXIcon size={15} />
+            </a>
+            <a
+              href="https://github.com/lambeboluwatife"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="w-8 h-8 rounded bg-[#101718] border border-[#1B2727] flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/50 transition-colors"
+            >
+              <GithubIcon size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lambe-boluwatife-daniel-7554411b3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="w-8 h-8 rounded bg-[#101718] border border-[#1B2727] flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/50 transition-colors"
+            >
+              <LinkedinIcon size={16} />
+            </a>
+            <a
+              href="mailto:boluwatifelambe@gmail.com"
+              aria-label="Send email"
+              className="w-8 h-8 rounded bg-[#101718] border border-[#1B2727] flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/50 transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
@@ -70,20 +104,20 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-primary transition-colors"
-                href="/#process"
+                href="/about"
               >
-                Development Process
-              </a>
+                About Team
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-primary transition-colors"
-                href="mailto:contact@lbddigitalhub.com"
+                href="/contact"
               >
                 Contact Team
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -117,7 +151,7 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-text-white">
-            System Status: <span className="text-primary font-semibold">Operational</span>
+            System Status: <span className="text-primary font-semibold">Ready</span>
           </span>
         </div>
       </div>

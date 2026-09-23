@@ -65,23 +65,34 @@ export const metadata: Metadata = {
     siteName: "LBD Digital Hub",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "LBD Digital Hub — High-Performance Web, Mobile & AI Systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LBD Digital Hub — Web Platforms, Mobile Apps & AI Systems",
     description:
       "Engineering modern websites, mobile applications, and intelligent AI workflows built for speed, scalability, and business growth.",
+    images: ["/og-image.jpg"],
     creator: "@danibholie",
     site: "@danibholie",
   },
   icons: {
     icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/icon.png", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({

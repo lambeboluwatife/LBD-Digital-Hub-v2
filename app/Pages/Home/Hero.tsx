@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import {
   Globe,
   Layers,
@@ -34,18 +34,18 @@ const Hero = () => {
         </p>
         {/* <!-- CTAs --> */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-20 w-full sm:w-auto">
-          <a
+          <Link
             className="w-full sm:w-auto bg-primary text-[#080D0E] font-semibold text-base px-7 py-3.5 rounded-md hover:bg-primary-hover transition-all text-center"
-            href="#contact"
+            href="/contact"
           >
             Start a Project
-          </a>
-          <a
+          </Link>
+          <Link
             className="w-full sm:w-auto bg-[#101718] text-[#F5F7F7] border border-[#1B2727] hover:border-primary/50 text-base font-medium px-7 py-3.5 rounded-md transition-all text-center"
-            href="#work"
+            href="/projects"
           >
             Explore Our Work
-          </a>
+          </Link>
         </div>
         {/* <!-- HERO VISUAL: Abstract Architectural Blueprint / Digital Architecture System --> */}
         <div className="w-full max-w-6xl mx-auto bg-surface border border-border-tech rounded-md p-6 lg:p-8 relative overflow-hidden shadow-2xl">
@@ -53,7 +53,7 @@ const Hero = () => {
           <div className="absolute inset-0 blueprint-grid-dense opacity-60 pointer-events-none"></div>
           {/* <!-- Terminal Header --> */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-border-tech text-xs font-mono text-text-muted relative z-10">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="flex gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#1B2727] border border-border-tech"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#1B2727] border border-border-tech"></span>

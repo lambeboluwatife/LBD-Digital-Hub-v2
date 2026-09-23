@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const ProjectCTA = () => {
   return (
@@ -19,19 +20,19 @@ const ProjectCTA = () => {
           work easier. Let&apos;s talk about what you need.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a
-            href="mailto:contact@lbddigitalhub.com"
+          <Link
+            href="/contact"
             className="w-full sm:w-auto px-8 py-3.5 rounded bg-[#12C887] text-[#080D0E] font-medium text-sm tracking-wide hover:bg-[#10b378] transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(18,200,135,0.2)] font-semibold"
           >
             <span>START A PROJECT</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="/services"
             className="w-full sm:w-auto px-8 py-3.5 rounded bg-[#080D0E] border border-[#1B2727] text-white font-medium text-sm hover:border-[#12C887]/60 transition-colors flex items-center justify-center"
           >
             VIEW OUR SERVICES
-          </a>
+          </Link>
         </div>
       </div>
     </section>

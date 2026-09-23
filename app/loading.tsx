@@ -17,10 +17,10 @@ export default function Loading() {
       <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#101718] border border-[#1B2727] font-mono-code text-xs text-[#12C887]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#12C887] animate-pulse" />
-          <span>INITIALIZING DIGITAL SYSTEM...</span>
+          <span>LOADING LBD DIGITAL HUB...</span>
         </div>
         <p className="font-mono-code text-[11px] text-[#8A999A] tracking-wider uppercase">
-          L.B.D Digital Hub • Loading Assets
+          Preparing High-Performance Experience
         </p>
       </div>
     </div>
