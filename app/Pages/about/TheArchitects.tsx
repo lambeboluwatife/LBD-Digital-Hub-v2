@@ -29,7 +29,7 @@ const architects: Architect[] = [
   {
     name: "Sowunmi Mayowa",
     role: "AI Systems Developer",
-    image: "/images/Sowunmi_mayowa.png",
+    image: "/images/mayowa.png",
     alt: "A professional headshot of Sowunmi Mayowa, AI Systems Developer, with cyan backlighting luminescence.",
     bio: "Builds practical AI workflows, automated systems, and smart business tools that save teams time and accelerate growth.",
     labId: "AI // 03",
